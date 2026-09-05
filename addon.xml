@@ -4,13 +4,13 @@
     <!-- ElaRepo's own add-ons. Two copies of the same index: the GitHub distribution repository
          is listed first and is where downloads come from; repo.elarepo.org keeps serving the
          identical tree so that this repository ZIP can stay installable from the website and
-         existing installs keep resolving. limniotis/elarepo is private and mirrors the webroot
-         path for path; it is served publicly through GitHub Pages (limniotis.github.io/elarepo),
-         since raw.githubusercontent.com will not serve a private repository to a Kodi client. -->
+         existing installs keep resolving. limniotis/elarepo is a public distribution repository
+         that mirrors the webroot path for path; it carries only built zips and live TV lists,
+         while the add-on source repositories stay private. -->
     <dir>
-      <info compressed="false">https://limniotis.github.io/elarepo/zips/addons.xml</info>
-      <checksum>https://limniotis.github.io/elarepo/zips/addons.xml.md5</checksum>
-      <datadir zip="true">https://limniotis.github.io/elarepo/zips/</datadir>
+      <info compressed="false">https://raw.githubusercontent.com/limniotis/elarepo/main/zips/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/limniotis/elarepo/main/zips/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/limniotis/elarepo/main/zips/</datadir>
     </dir>
     <dir>
       <info compressed="false">https://repo.elarepo.org/zips/addons.xml</info>
@@ -38,7 +38,7 @@
     <description>Repository for various add-ons</description>
     <platform>all</platform>
     <news>1.0.6
-- GitHub downloads now served through GitHub Pages so the distribution repository can stay private
+- GitHub downloads served from a public distribution repository; repo.elarepo.org kept as fallback
 1.0.5
 - Downloads now come from the GitHub distribution repository; repo.elarepo.org is kept as a second copy
 - AliveGR retired: Twilight0's main repository removed, libs repository kept for IPARHO's dependencies
