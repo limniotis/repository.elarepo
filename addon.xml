@@ -1,17 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <addon id="repository.elarepo" name="ElaRepo Addon Repository" version="1.0.6" provider-name="elar3">
   <extension point="xbmc.addon.repository" name="ElaRepo Addon Repository">
-    <!-- ElaRepo's own add-ons. Two copies of the same index on the same host, differing by path:
-         /gh/ is a git-versioned mirror (its folder is a git checkout) and is listed first, so it
-         is where downloads come from; the plain /zips/ tree the site already serves is kept as the
-         second copy so this repository ZIP stays installable from the website and existing installs
-         keep resolving. The add-on source repositories stay private; only built zips and live TV
-         lists are deployed to the mirror. -->
-    <dir>
-      <info compressed="false">https://repo.elarepo.org/gh/zips/addons.xml</info>
-      <checksum>https://repo.elarepo.org/gh/zips/addons.xml.md5</checksum>
-      <datadir zip="true">https://repo.elarepo.org/gh/zips/</datadir>
-    </dir>
+    <!-- ElaRepo's own add-ons, served from repo.elarepo.org/zips. The directory is not browsable;
+         Kodi resolves the exact file URLs from this index, so listing is not needed. The add-on
+         source repositories stay private - only the built zips and index are published here. -->
     <dir>
       <info compressed="false">https://repo.elarepo.org/zips/addons.xml</info>
       <checksum>https://repo.elarepo.org/zips/addons.xml.md5</checksum>
@@ -38,7 +30,7 @@
     <description>Repository for various add-ons</description>
     <platform>all</platform>
     <news>1.0.6
-- Downloads served from a git-versioned mirror (repo.elarepo.org/gh); the website tree kept as fallback
+- Served from repo.elarepo.org/zips (not browsable); AliveGR retired, Twilight0 libs kept for IPARHO
 1.0.5
 - Downloads now come from the GitHub distribution repository; repo.elarepo.org is kept as a second copy
 - AliveGR retired: Twilight0's main repository removed, libs repository kept for IPARHO's dependencies
