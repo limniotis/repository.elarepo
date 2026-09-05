@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="repository.elarepo" name="ElaRepo Addon Repository" version="1.0.5" provider-name="elar3">
+<addon id="repository.elarepo" name="ElaRepo Addon Repository" version="1.0.6" provider-name="elar3">
   <extension point="xbmc.addon.repository" name="ElaRepo Addon Repository">
     <!-- ElaRepo's own add-ons. Two copies of the same index: the GitHub distribution repository
          is listed first and is where downloads come from; repo.elarepo.org keeps serving the
          identical tree so that this repository ZIP can stay installable from the website and
-         existing installs keep resolving. limniotis/elarepo mirrors the webroot path for path. -->
+         existing installs keep resolving. limniotis/elarepo is private and mirrors the webroot
+         path for path; it is served publicly through GitHub Pages (limniotis.github.io/elarepo),
+         since raw.githubusercontent.com will not serve a private repository to a Kodi client. -->
     <dir>
-      <info compressed="false">https://raw.githubusercontent.com/limniotis/elarepo/main/zips/addons.xml</info>
-      <checksum>https://raw.githubusercontent.com/limniotis/elarepo/main/zips/addons.xml.md5</checksum>
-      <datadir zip="true">https://raw.githubusercontent.com/limniotis/elarepo/main/zips/</datadir>
+      <info compressed="false">https://limniotis.github.io/elarepo/zips/addons.xml</info>
+      <checksum>https://limniotis.github.io/elarepo/zips/addons.xml.md5</checksum>
+      <datadir zip="true">https://limniotis.github.io/elarepo/zips/</datadir>
     </dir>
     <dir>
       <info compressed="false">https://repo.elarepo.org/zips/addons.xml</info>
@@ -35,7 +37,9 @@
     <summary>Repository for various add-ons</summary>
     <description>Repository for various add-ons</description>
     <platform>all</platform>
-    <news>1.0.5
+    <news>1.0.6
+- GitHub downloads now served through GitHub Pages so the distribution repository can stay private
+1.0.5
 - Downloads now come from the GitHub distribution repository; repo.elarepo.org is kept as a second copy
 - AliveGR retired: Twilight0's main repository removed, libs repository kept for IPARHO's dependencies
 1.0.4
