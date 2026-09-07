@@ -1,13 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="repository.elarepo" name="ElaRepo Addon Repository" version="1.0.6" provider-name="elar3">
+<addon id="repository.elarepo" name="ElaRepo Addon Repository" version="1.0.7" provider-name="elar3">
   <extension point="xbmc.addon.repository" name="ElaRepo Addon Repository">
-    <!-- ElaRepo's own add-ons, served from repo.elarepo.org/zips. The directory is not browsable;
-         Kodi resolves the exact file URLs from this index, so listing is not needed. The add-on
-         source repositories stay private - only the built zips and index are published here. -->
+    <!-- ElaRepo's own add-ons, served straight from this public repository over
+         raw.githubusercontent.com. GitHub never lists a directory, so the index is not
+         browsable; Kodi resolves the exact file URLs from this index. The add-on SOURCE
+         repositories (e.g. plugin.video.iparhotv) stay private - only the built zips and
+         this index are published here. -->
     <dir>
-      <info compressed="false">https://repo.elarepo.org/zips/addons.xml</info>
-      <checksum>https://repo.elarepo.org/zips/addons.xml.md5</checksum>
-      <datadir zip="true">https://repo.elarepo.org/zips/</datadir>
+      <info compressed="false">https://raw.githubusercontent.com/limniotis/repository.elarepo/main/zips/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/limniotis/repository.elarepo/main/zips/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/limniotis/repository.elarepo/main/zips/</datadir>
     </dir>
     <!-- Twilight0's LIBS repository stays: IPARHO imports script.module.unicache, .parsers,
          .tulip, .netclient and .fuzzywuzzy from it. Twilight0's MAIN repository was removed
@@ -29,7 +31,9 @@
     <summary>Repository for various add-ons</summary>
     <description>Repository for various add-ons</description>
     <platform>all</platform>
-    <news>1.0.6
+    <news>1.0.7
+- Downloads now served straight from GitHub (raw.githubusercontent.com); no separate hosting needed
+1.0.6
 - Served from repo.elarepo.org/zips (not browsable); AliveGR retired, Twilight0 libs kept for IPARHO
 1.0.5
 - Downloads now come from the GitHub distribution repository; repo.elarepo.org is kept as a second copy

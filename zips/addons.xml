@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="plugin.video.iparhotv" name="IPARHO TV" version="2.0.10" provider-name="elar3">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="resource.images.iparhotv.artwork" version="1.0.4"/>
+        <import addon="script.module.resolveurl" version="5.1.199"/>
+        <import addon="script.module.resolveurl.pluginsgr" version="0.1.16"/>
+        <import addon="script.module.scrapetube" version="2.6.1"/>
+        <import addon="script.module.netclient" version="1.1.2"/>
+        <import addon="script.module.unicache" version="1.0.0"/>
+        <import addon="script.module.parsers" version="1.0.0"/>
+        <import addon="script.module.tulip" version="4.0.3"/>
+        <import addon="script.module.fuzzywuzzy" version="0.17.0"/>
+        <import addon="script.module.websocket" version="1.6.4"/>
+        <import addon="plugin.video.youtube" version="7.4.3"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="router.py">
+        <provides>video audio image executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/modules/service.py"/>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <summary lang="en">IPARHO TV addon</summary>
+        <description lang="en_GB">IPARHO TV is an addon allowing streaming content available mostly in Greek language.</description>
+        <disclaimer lang="en_GB">IPARHO TV's author does not host, stream or distribute any of the content displayed inside this software and cannot be held responsible for the quality or availability of the listed streams.
+On demand content is scraped from various websites and is freely available on the internet on public domains. This software acts only as a search engine.
+Kindly note that IPARHO TV is not an official part of the media player you are running, and therefore not to be mentioned within official support channels, this addon has nothing to do with the media player itself, nor it’s intended use, it is simply a third party plugin which has been added to your system and it is provided "as is" with no warranty.</disclaimer>
+        <summary lang="el_GR">Πρόσθετο IPARHO TV</summary>
+        <description lang="el_GR">Το πρόσθετο IPARHO TV επιτρέπει τη θέαση ροών με περιεχόμενο κυρίως εις την Ελληνική γλώσσα.</description>
+        <disclaimer lang="el_GR">Ο δημιουργός του IPARHO TV δε φιλοξενεί ή παρέχει οποιοδήποτε από τα απεικονιζόμενα πολυμέσα και περιεχόμένο εντός του μενού του και δεν μπορεί να θεωρηθεί υπεύθυνος για την ποιότητα ή την διαθεσιμότητα των ροών.
+Το περιεχόμενο αναπαραγωγής κατά βούληση φιλτράρεται από διάφορες ιστοσελίδες ελεύθερα διαθέσιμες στο διαδίκτυο σε δημόσιους ιστότοπους. Το παρόν λογισμικό ενεργεί μόνο ως μηχανή αναζήτησης.
+Παρακαλώ προσέξτε ότι το IPARHO TV δεν είναι επίσημο κομμάτι του αναπαραγωγέα πολυμέσων Kodi ή της καθορισμένης χρήσης του, είναι απλά μία μικροεφαρμογή που προστέθηκε στο σύστημά σας και που παρέχεται "όπως είναι" χωρίς καμία εγγύηση καλής λειτουργίας.</disclaimer>
+        <language>en el</language>
+        <license>GPL-3.0-only</license>
+        <forum>https://repo.elarepo.org/</forum>
+        <source>https://repo.elarepo.org/</source>
+        <website>https://repo.elarepo.org/</website>
+        <news>+ [COLOR green]2.0.10[/COLOR]
+- The in-add-on update prompt compares versions correctly from 2.0.10 onward (2.0.10 used to count as newer than 2.1.0)
++ [COLOR green]2.0.9[/COLOR]
+- Live TV: the channel list and the playlist are fetched side by side, and when they cannot be fetched the last good list is shown at once (marked as an offline copy) instead of an error; a stalled host is not retried for ten minutes, an instant failure is
+- Live TV: a playlist hiccup no longer drops the playlist channels for eight hours; the last good playlist is kept
+- Opening a channel no longer loads the resolver library at all; it is imported only for movie and series sources
+- The update check is skipped on a play click and on the source picker; Clear cache also clears the offline-copy backoff
++ [COLOR green]2.0.8[/COLOR]
+- Live TV: opening the list no longer waits up to 20 seconds per source when a host stalls, and a channel click skips the movie-source resolver
+- Live TV: DRM channels play again (their licence header was being read as plain text)
+- The three-hourly update check can no longer hold a screen for more than a few seconds
++ [COLOR green]2.0.7[/COLOR]
+- When greek-movies.com is blocked or unreachable, a notice is shown instead of Kodi's red X, and the failure is no longer cached for 12 hours
+- Shows listed by date: the month is read correctly instead of silently defaulting to January
+- Live TV: the channel list is now alphabetical, and playlist channel names are trimmed
++ [COLOR green]2.0.6[/COLOR]
+- Movies, series and shows: the sources are link-checked in order and the first working one plays automatically, no host list to pick from (Settings, Streams, Action for streams' choice: Auto is the new default; Dialog and Directory remain)
+- A source whose file is gone is skipped instead of failing playback, in every mode
++ [COLOR green]2.0.5[/COLOR]
+- Live TV: the JSON and M3U lists are merged into one, served from repo.elarepo.org with upstream fallback; group labels fixed
++ [COLOR green]2.0.0[/COLOR]
+- Rebuilt on the current AliveGR codebase: the previous 1.0.27 line targeted tulip 3.x and could not start against tulip 4.x
+- Greek-movies episode links fixed, plus the performance and Kodi 21/22 compatibility work
+- Sports and Radio sections carried over; browsing the add-on as a music source opens Radio
+- Kids section restored in full: Cartoon Collection, Educational, Kids Songs and ERTflix children
+- Newspaper front pages retained: browse the add-on as a picture source (Pictures menu)
+- New under Settings, Actions: import history and bookmarks from an AliveGR install
+- Networks section removed: it was unreachable in 1.0.27 and had no menu entry
+- Not carried over: the IPTV Simple setup helper, the kids-content blacklist filter, and the gamatomovies cartoon scraper; the autostart setting is now called auto_start and must be re-enabled once
+- Stale Python 3.8 bytecode and a stray .env file no longer shipped</news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <screenshot>resources/media/main_menu.jpg</screenshot>
+            <screenshot>resources/media/live_streams.jpg</screenshot>
+            <screenshot>resources/media/movies.jpg</screenshot>
+            <screenshot>resources/media/tv_series.jpg</screenshot>
+            <screenshot>resources/media/kids_movies.jpg</screenshot>
+            <screenshot>resources/media/search.jpg</screenshot>
+            <screenshot>resources/media/newspapers_frontpages.jpg</screenshot>
+            <screenshot>resources/media/music.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>
+<addon id="repository.elarepo" name="ElaRepo Addon Repository" version="1.0.7" provider-name="elar3">
+  <extension point="xbmc.addon.repository" name="ElaRepo Addon Repository">
+    <!-- ElaRepo's own add-ons, served straight from this public repository over
+         raw.githubusercontent.com. GitHub never lists a directory, so the index is not
+         browsable; Kodi resolves the exact file URLs from this index. The add-on SOURCE
+         repositories (e.g. plugin.video.iparhotv) stay private - only the built zips and
+         this index are published here. -->
+    <dir>
+      <info compressed="false">https://raw.githubusercontent.com/limniotis/repository.elarepo/main/zips/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/limniotis/repository.elarepo/main/zips/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/limniotis/repository.elarepo/main/zips/</datadir>
+    </dir>
+    <!-- Twilight0's LIBS repository stays: IPARHO imports script.module.unicache, .parsers,
+         .tulip, .netclient and .fuzzywuzzy from it. Twilight0's MAIN repository was removed
+         with AliveGR - it carried only that add-on and its artwork. -->
+    <dir>
+      <info compressed="true">https://raw.githubusercontent.com/Twilight0/repository.twilight0.libs/master/repo_dir/addons.xml.gz</info>
+      <checksum>https://raw.githubusercontent.com/Twilight0/repository.twilight0.libs/master/repo_dir/addons.xml.gz.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/Twilight0/repository.twilight0.libs/master/repo_dir/</datadir>
+      <hashes>false</hashes>
+    </dir>
+    <dir>
+      <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
+    </dir>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary>Repository for various add-ons</summary>
+    <description>Repository for various add-ons</description>
+    <platform>all</platform>
+    <news>1.0.7
+- Downloads now served straight from GitHub (raw.githubusercontent.com); no separate hosting needed
+1.0.6
+- Served from repo.elarepo.org/zips (not browsable); AliveGR retired, Twilight0 libs kept for IPARHO
+1.0.5
+- Downloads now come from the GitHub distribution repository; repo.elarepo.org is kept as a second copy
+- AliveGR retired: Twilight0's main repository removed, libs repository kept for IPARHO's dependencies
+1.0.4
+- Add Twilight0 main and libs sources (AliveGR dependencies)
+- Remove dead _zips directory and duplicate ElaRepo entry
+    </news>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+</addons>
