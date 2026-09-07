@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.iparhotv" name="IPARHO TV" version="2.0.13" provider-name="elar3">
+<addon id="plugin.video.iparhotv" name="IPARHO TV" version="2.0.14" provider-name="elar3">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="resource.images.iparhotv.artwork" version="1.0.4"/>
@@ -37,7 +37,9 @@ Kindly note that IPARHO TV is not an official part of the media player you are r
         <forum>https://repo.elarepo.org/</forum>
         <source>https://repo.elarepo.org/</source>
         <website>https://repo.elarepo.org/</website>
-        <news>+ [COLOR green]2.0.13[/COLOR]
+        <news>+ [COLOR green]2.0.14[/COLOR]
+- Set up Live TV in the TV guide no longer switches the PVR on automatically (that could hang "PVR manager starting up 0%" on Kodi 20+); it saves the list and shows the one manual step to finish
++ [COLOR green]2.0.13[/COLOR]
 - The in-add-on "new version" check reads the current repository index again (it was still pointing at the old hosting and always reported "up to date")
 + [COLOR green]2.0.12[/COLOR]
 - Live TV lists are now served from the add-on's own repository and refreshed daily from the upstream channel lists, so a missing channel (e.g. ERT World) is picked up without a manual server update
