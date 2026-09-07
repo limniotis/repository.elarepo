@@ -29,10 +29,12 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- live/gr_ch.json live/greek.m3u; then
+          git add live/gr_ch.json live/greek.m3u
+          # --cached so newly created (untracked) files count as a change on the first run,
+          # which a plain 'git diff' would miss.
+          if git diff --cached --quiet; then
             echo "No change."
           else
-            git add live/gr_ch.json live/greek.m3u
             git commit -m "live data: refresh from upstreams + overrides [skip ci]"
             git push
           fi
