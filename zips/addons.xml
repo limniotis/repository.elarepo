@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.iparhotv" name="IPARHO TV" version="2.0.10" provider-name="elar3">
+<addon id="plugin.video.iparhotv" name="IPARHO TV" version="2.0.11" provider-name="elar3">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="resource.images.iparhotv.artwork" version="1.0.4"/>
@@ -37,7 +37,9 @@ Kindly note that IPARHO TV is not an official part of the media player you are r
         <forum>https://repo.elarepo.org/</forum>
         <source>https://repo.elarepo.org/</source>
         <website>https://repo.elarepo.org/</website>
-        <news>+ [COLOR green]2.0.10[/COLOR]
+        <news>+ [COLOR green]2.0.11[/COLOR]
+- Live TV can be added to Kodi's own TV guide: Settings, Actions, "Set up Live TV in the TV guide (IPTV Simple)" writes a channel playlist and points IPTV Simple Client at it; channels play through the add-on so headers and DRM keep working
++ [COLOR green]2.0.10[/COLOR]
 - The in-add-on update prompt compares versions correctly from 2.0.10 onward (2.0.10 used to count as newer than 2.1.0)
 + [COLOR green]2.0.9[/COLOR]
 - Live TV: the channel list and the playlist are fetched side by side, and when they cannot be fetched the last good list is shown at once (marked as an offline copy) instead of an error; a stalled host is not retried for ten minutes, an instant failure is
