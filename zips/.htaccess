@@ -1,7 +1,0 @@
-# repo.elarepo.org/zips is not browsable: Kodi resolves exact file URLs from
-# addons.xml, so directory listing is never needed and is turned off. The zips are
-# also kept out of search indexes. (Apache/Enhance honors this; GitHub raw ignores it.)
-Options -Indexes
-<IfModule mod_headers.c>
-  Header set X-Robots-Tag "noindex, nofollow"
-</IfModule>
