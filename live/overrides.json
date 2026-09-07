@@ -1,0 +1,23 @@
+{
+  "_note": "Local fixes applied on top of the upstream komhsgr M3U by update_live.py. 'replace' swaps an existing channel's URL with the first candidate that responds; 'add' appends a channel if a candidate responds and it is not already present. Candidates are probed on the GitHub Actions runner, so dead URLs are never written. Paste a known-good URL as the FIRST candidate to force it. Mega Cosmos and Antenna Pacific are Australian pay-TV (Foxtel/Optus ch 941) with no reliable free stream; leave a subscription URL here when you have one.",
+  "replace": {
+    "MEGA COSMOS": [
+      "https://spark3.smart-tv-data.com/megaCosmos/megaCosmos/playlist.m3u8",
+      "https://spark3.smart-tv-data.com/megacosmos/megacosmos/playlist.m3u8",
+      "https://cdn.smart-tv-data.com/mega/MegaCosmos/playlist.m3u8",
+      "https://cdn.smart-tv-data.com/mega/MegaCosmos/index.m3u8"
+    ]
+  },
+  "add": [
+    {
+      "name": "ANTENNA PACIFIC",
+      "group": "ΔΙΕΘΝΗ ΔΙΚΤΥΑ",
+      "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/greece/ant1-gr.png",
+      "candidates": [
+        "https://mcdn.antennaplus.gr/live/media0/Pacific/HLS/Pacific.m3u8",
+        "https://mcdn.antennaplus.gr/live/media0/AntPacific/HLS/AntPacific.m3u8",
+        "https://mcdn.antennaplus.gr/live/media0/Ant1Pacific/HLS/Ant1Pacific.m3u8"
+      ]
+    }
+  ]
+}
