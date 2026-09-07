@@ -1,0 +1,4 @@
+# This repo is deployed into the web document root (Enhance Git deploy) so that the
+# zips/ folder is served at repo.elarepo.org/zips/. Never serve the git metadata: it
+# would expose this private repository's full history. Kodi only ever fetches /zips/.
+RedirectMatch 404 /\.git
