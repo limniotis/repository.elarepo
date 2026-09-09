@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.iparhotv" name="IPARHO TV" version="2.0.15" provider-name="elar3">
+<addon id="plugin.video.iparhotv" name="IPARHO TV" version="2.0.16" provider-name="elar3">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="resource.images.iparhotv.artwork" version="1.0.4"/>
@@ -37,7 +37,10 @@ Kindly note that IPARHO TV is not an official part of the media player you are r
         <forum>https://repo.elarepo.org/</forum>
         <source>https://repo.elarepo.org/</source>
         <website>https://repo.elarepo.org/</website>
-        <news>+ [COLOR green]2.0.15[/COLOR]
+        <news>+ [COLOR green]2.0.16[/COLOR]
+- Auto (play the first working source) now skips the geo-blocked ANT1/Antenna and Mega sources so it lands on a source that actually plays; Dialog and Directory still list every source, so they remain a manual choice
+- Episodes now have a "Select source" long-press menu entry that opens the source picker for that episode, even when the global mode is Auto
++ [COLOR green]2.0.15[/COLOR]
 - Set up Live TV in the TV guide now configures IPTV Simple Client automatically on Kodi 20+ (writes its instance settings) and only then switches PVR on, so it comes up working with no manual step and no 0% hang
 + [COLOR green]2.0.14[/COLOR]
 - Set up Live TV in the TV guide no longer switches the PVR on automatically (that could hang "PVR manager starting up 0%" on Kodi 20+); it saves the list and shows the one manual step to finish
